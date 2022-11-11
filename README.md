@@ -14,7 +14,13 @@ Version 1.0.01
 ---
 ### Description
 
-This project contains some simple code to help students out with understanding how to accomplish a variety of tasks using JavaFX. I expect this to continue to be refined and improved over time. It was thrown together quickly to give my students some examples to work with on their projects. 
+This project contains some simple code to help students out with understanding how to accomplish a variety of tasks using JavaFX. Most of this was developed to show how to use Gradle to build a standalone, distributable JavaFX application. But, there are some specific features in the code that, over time, I'll keep adding as I get student questions:
+
+1. Demonstrate how to change `Scene` objects on a `Stage`, where the scenes were developed using [SceneBuilder](https://gluonhq.com/products/scene-builder/).
+    1. There are two FXML files. Switch between the scenes by click on the button on each scene
+2. A couple teams have used `GridPane` to develop some sort of board game like checkers, chess, or a grid-like game such as sudoku. This example demonstrate how to obtain the cell location when the user clicks on an object managed using a `GridPane`
+
+I expect this to continue to be refined and improved over time. It was thrown together rather quickly. 
 
 ---
 ### Development Workflow Features
@@ -28,16 +34,10 @@ This project contains some simple code to help students out with understanding h
   * I rely on the [Java Module plugin for Gradle](https://github.com/java9-modularity/gradle-modules-plugin) which made managing modules significantly easier
 * Uses the [Badass JLink Plugin](https://badass-jlink-plugin.beryx.org/releases/latest/), which is a must for any team who wants to OS dependent distribution.
 
-### Application Features
-
-Most of this was developed to show how to use Gradle to build a standalone JavaFX application. But, there are some specific features in the code that, over time, I'll keep adding as I get student questions:
-
-1. Demonstrate how to change `Scene` objects on a `Stage`, where the scenes were developed using [SceneBuilder](https://gluonhq.com/products/scene-builder/).
-   1. There are two FXML files. Switch between the scenes by click on the button on each scene
-2. A couple teams have used `GridPane` to develop some sort of board game like checkers, chess, or a grid-like game such as sudoku. This example demonstrate how to obtain the cell location when the user clicks on an object managed using a `GridPane`
-
 ---
 ### Instructions
+
+Of course, when cloning a new repository with Gradle, do not forget to issue the `gradle wrapper` command in your project directory. 
 
 * `./gradlew build` - build the application
 *  `./gradlew jlink` - builds a modular runtime image. After you run this, you should have a distributable image in your `./build/image` folder. For this application, you could run `./build/image/bin/multiscenetest`
