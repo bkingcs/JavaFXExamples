@@ -22,6 +22,8 @@ This project contains some simple code to help students out with understanding h
 
 I expect this to continue to be refined and improved over time. It was thrown together rather quickly. 
 
+![scene_one.png](scene_one.png)
+![scene_two.png](scene_two.png)
 ---
 ### Development Workflow Features
 
