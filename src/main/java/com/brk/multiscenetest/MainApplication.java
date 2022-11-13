@@ -41,6 +41,13 @@ public class MainApplication extends Application {
         launch();
     }
 
+    /**
+     * This is a general static helper method that loads FXML files specified by
+     * the{@link FXMLScenes} enumeration and places it on the {@link Stage}
+     *
+     * @param stage the {@link Stage} to place the Scene on
+     * @param fxmlScene the {@link FXMLScenes} enum that speciies the {@code .fxml} file to load
+     */
     public static void loadSceneOnStage(Stage stage, FXMLScenes fxmlScene) {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fxmlScene.getFileName()));
         try {
