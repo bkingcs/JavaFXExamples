@@ -1,7 +1,10 @@
 package com.brk.multiscenetest;
 
+import com.brk.multiscenetest.lights.LightsDemoController;
+import com.brk.multiscenetest.lights.model.LightsModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -12,7 +15,9 @@ import java.io.IOException;
  */
 enum FXMLScenes {
     SCENE_ONE("hello-scene-one.fxml"),
-    SCENE_TWO("hello-scene-two.fxml");
+    GRIDPANE_EXAMPLE("gridpane-example.fxml"),
+    ANIMATION_EXAMPLE("animation-demo.fxml"),
+    LIGHTS_DEMO("lights-demo.fxml");
 
     private final String fileName;
 
@@ -51,7 +56,22 @@ public class MainApplication extends Application {
     public static void loadSceneOnStage(Stage stage, FXMLScenes fxmlScene) {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource(fxmlScene.getFileName()));
         try {
-            Scene scene = new Scene(fxmlLoader.load());
+            // Get the root node of the scene graph
+            Parent root = fxmlLoader.load();
+
+            // Attach any possible model to the controller if necessary
+            switch (fxmlScene) {
+                case LIGHTS_DEMO -> {
+                    LightsModel model = new LightsModel();
+                    LightsDemoController controller = fxmlLoader.getController();
+                    controller.setModel(model);
+                }
+            }
+
+            // Create the scene for the scene graph
+            Scene scene = new Scene(root);
+
+            // Place it on the stage
             stage.setScene(scene);
         }
         catch (IOException e) {

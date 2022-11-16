@@ -13,9 +13,9 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 /**
- * The controller class for {@code hello-scene-two.fxml}
+ * The controller class for {@code gridpane-example.fxml}
  */
-public class HelloControllerTwo {
+public class GridPaneExampleController {
 
     @FXML
     private ResourceBundle resources;
@@ -36,9 +36,9 @@ public class HelloControllerTwo {
 
     @FXML
     void initialize() {
-        assert btnPrevScreen != null : "fx:id=\"btnPrevScreen\" was not injected: check your FXML file 'hello-scene-two.fxml'.";
-        assert gridPane != null : "fx:id=\"gridPane\" was not injected: check your FXML file 'hello-scene-two.fxml'.";
-        assert lblStatusBar != null : "fx:id=\"lblStatusBar\" was not injected: check your FXML file 'hello-scene-two.fxml'.";
+        assert btnPrevScreen != null : "fx:id=\"btnPrevScreen\" was not injected: check your FXML file 'gridpane-example.fxml'.";
+        assert gridPane != null : "fx:id=\"gridPane\" was not injected: check your FXML file 'gridpane-example.fxml'.";
+        assert lblStatusBar != null : "fx:id=\"lblStatusBar\" was not injected: check your FXML file 'gridpane-example.fxml'.";
 
         // I could populate my GridPane with individual TextField controls in SceneBuilder, but opted
         // to just populate it here for simplicity

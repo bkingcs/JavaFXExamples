@@ -20,14 +20,23 @@ public class HelloControllerOne {
     private URL location;
 
     @FXML
-    private Button btnNextScreen;
+    private Button btnAnimation;
+
+    @FXML
+    private Button btnGridPane;
+
+    @FXML
+    private Button btnLightsDemo;
 
     @FXML
     private Label lblStatusBar;
 
     @FXML
     void initialize() {
-        assert btnNextScreen != null : "fx:id=\"btnNextScreen\" was not injected: check your FXML file 'hello-scene-one.fxml'.";
+        assert btnAnimation != null : "fx:id=\"btnAnimation\" was not injected: check your FXML file 'hello-scene-one.fxml'.";
+        assert btnGridPane != null : "fx:id=\"btnGridPane\" was not injected: check your FXML file 'hello-scene-one.fxml'.";
+        assert btnLightsDemo != null : "fx:id=\"btnLightsDemo\" was not injected: check your FXML file " +
+                "'hello-scene-one.fxml'.";
         assert lblStatusBar != null : "fx:id=\"lblStatusBar\" was not injected: check your FXML file 'hello-scene-one.fxml'.";
     }
 
@@ -38,15 +47,19 @@ public class HelloControllerOne {
      * @param event is the {@link ActionEvent} passed
      */
     @FXML
-    void onBtnNextScreenAction(ActionEvent event) {
+    void onBtnNextSceneAction(ActionEvent event) {
         // Just a quick indication that the button was clicked
         lblStatusBar.setText("Button clicked... changing to next scene...");
 
         // Get the Stage object of this button
-        Stage stage = (Stage) btnNextScreen.getScene().getWindow();
+        Stage stage = (Stage) btnGridPane.getScene().getWindow();
 
-        MainApplication.loadSceneOnStage(stage,FXMLScenes.SCENE_TWO);
+        if (event.getSource() == btnGridPane)
+            MainApplication.loadSceneOnStage(stage,FXMLScenes.GRIDPANE_EXAMPLE);
+        else if (event.getSource() == btnAnimation)
+            MainApplication.loadSceneOnStage(stage,FXMLScenes.ANIMATION_EXAMPLE);
+        else if (event.getSource() == btnLightsDemo)
+            MainApplication.loadSceneOnStage(stage,FXMLScenes.LIGHTS_DEMO);
     }
-
 
 }
