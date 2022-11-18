@@ -14,7 +14,7 @@ import java.io.IOException;
  * An enumeration to encapsulate the names of our fxml scene graph files
  */
 enum FXMLScenes {
-    SCENE_ONE("hello-scene-one.fxml"),
+    SCENE_ONE("main-opening-scene.fxml"),
     GRIDPANE_EXAMPLE("gridpane-example.fxml"),
     ANIMATION_EXAMPLE("animation-demo.fxml"),
     LIGHTS_DEMO("lights-demo.fxml");

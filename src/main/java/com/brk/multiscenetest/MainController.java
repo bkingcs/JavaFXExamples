@@ -9,9 +9,9 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
- * The controller class for {@code hello-scene-one.fxml} scene graph
+ * The controller class for {@code main-opening-scene.fxml} scene graph
  */
-public class HelloControllerOne {
+public class MainController {
 
     @FXML
     private ResourceBundle resources;
@@ -33,11 +33,11 @@ public class HelloControllerOne {
 
     @FXML
     void initialize() {
-        assert btnAnimation != null : "fx:id=\"btnAnimation\" was not injected: check your FXML file 'hello-scene-one.fxml'.";
-        assert btnGridPane != null : "fx:id=\"btnGridPane\" was not injected: check your FXML file 'hello-scene-one.fxml'.";
+        assert btnAnimation != null : "fx:id=\"btnAnimation\" was not injected: check your FXML file 'main-opening-scene.fxml'.";
+        assert btnGridPane != null : "fx:id=\"btnGridPane\" was not injected: check your FXML file 'main-opening-scene.fxml'.";
         assert btnLightsDemo != null : "fx:id=\"btnLightsDemo\" was not injected: check your FXML file " +
-                "'hello-scene-one.fxml'.";
-        assert lblStatusBar != null : "fx:id=\"lblStatusBar\" was not injected: check your FXML file 'hello-scene-one.fxml'.";
+                "'main-opening-scene.fxml'.";
+        assert lblStatusBar != null : "fx:id=\"lblStatusBar\" was not injected: check your FXML file 'main-opening-scene.fxml'.";
     }
 
     /**
