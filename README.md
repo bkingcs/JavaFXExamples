@@ -30,6 +30,7 @@ I expect this code to continue to be refined and improved over time. It was thro
 ![gridview.png](gridview.png)  
 ![animation.png](animation.png)  
 ![lights.png](lights.png)  
+
 ---
 ### Development Workflow Features
 
