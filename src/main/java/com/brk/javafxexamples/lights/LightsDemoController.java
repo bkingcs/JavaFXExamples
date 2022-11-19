@@ -1,12 +1,12 @@
-package com.brk.multiscenetest.lights;
+package com.brk.javafxexamples.lights;
 
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
-import com.brk.multiscenetest.lights.model.LightEnum;
-import com.brk.multiscenetest.lights.model.LightModelState;
-import com.brk.multiscenetest.lights.model.LightsModel;
+import com.brk.javafxexamples.lights.model.LightEnum;
+import com.brk.javafxexamples.lights.model.LightModelState;
+import com.brk.javafxexamples.lights.model.LightsModel;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.StringBinding;
 import javafx.beans.property.SimpleStringProperty;

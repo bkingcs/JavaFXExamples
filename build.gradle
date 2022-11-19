@@ -10,7 +10,7 @@ plugins {
 }
 
 group 'com.brk'
-version '1.0.01'
+version '1.01.02'
 
 repositories {
     mavenCentral()
@@ -28,8 +28,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'multiscenetest'
-    mainClass = 'com.brk.multiscenetest.MainApplication'
+    mainModule = 'javafxexamples'
+    mainClass = 'com.brk.javafxexamples.MainApplication'
 }
 
 javafx {

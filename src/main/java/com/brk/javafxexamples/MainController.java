@@ -1,4 +1,4 @@
-package com.brk.multiscenetest;
+package com.brk.javafxexamples;
 
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -1,20 +1,4 @@
-/* *****************************************
- * CSCI205 - Software Engineering and Design
- * Fall 2022
- *
- * Name: YOUR NAME
- * Date: 11/12/22
- * Time: 9:25 PM
- *
- * Project: MultiSceneTest
- * Package: com.brk.multiscenetest
- * Class: AnimationDemoController
- * Description:
- *
- * ****************************************
- */
-
-package com.brk.multiscenetest.animation;
+package com.brk.javafxexamples.animation;
 
 import java.net.URL;
 import java.util.LinkedList;

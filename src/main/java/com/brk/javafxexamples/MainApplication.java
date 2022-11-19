@@ -1,7 +1,7 @@
-package com.brk.multiscenetest;
+package com.brk.javafxexamples;
 
-import com.brk.multiscenetest.lights.LightsDemoController;
-import com.brk.multiscenetest.lights.model.LightsModel;
+import com.brk.javafxexamples.lights.LightsDemoController;
+import com.brk.javafxexamples.lights.model.LightsModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

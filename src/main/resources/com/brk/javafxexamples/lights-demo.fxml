@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brk.multiscenetest.lights.LightsDemoController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.brk.javafxexamples.lights.LightsDemoController">
    <children>
       <Label id="StatusBar" fx:id="lblStatusBar" layoutX="24.0" layoutY="379.0" style="-fx-background-color: black;" text="Status Bar" textFill="YELLOW" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <padding>

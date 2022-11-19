@@ -1,5 +1,5 @@
 
-# MultiSceneTest
+# JavaFX Examples
 
 ---
 ### Author
@@ -8,8 +8,8 @@ Bucknell University
 Dept. of Computer Science  
 Lewisburg, PA 17837
 
-Version 1.0.01
-Date: 2022-Nov-11
+Version 1.1.01  
+Date: 2022-Nov-18
 
 ---
 ### Description
@@ -24,7 +24,7 @@ This project contains some simple code to help students out with understanding h
 
 I expect this to continue to be refined and improved over time. It was thrown together rather quickly. 
 
-![scene_one.png](scene_one.png)
+![scene_one.png](scene_one.png)  
 ![scene_two.png](scene_two.png)
 ---
 ### Development Workflow Features

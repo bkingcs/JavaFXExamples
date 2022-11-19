@@ -1,5 +1,5 @@
 
-package com.brk.multiscenetest.lights.model;
+package com.brk.javafxexamples.lights.model;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
