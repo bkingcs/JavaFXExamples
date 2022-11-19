@@ -14,18 +14,22 @@ Date: 2022-Nov-18
 ---
 ### Description
 
-This project contains some simple code to help students out with understanding how to accomplish a variety of tasks using JavaFX, including:
+This project contains some simple code to help students understand how to accomplish a variety of tasks using JavaFX, including:
 
 1. How to use Gradle to build a standalone, distributable application fully bundled with requisite JavaFX support libraries.
 2. Demonstrate how to change `Scene` objects on a `Stage`, where the scenes were developed using [SceneBuilder](https://gluonhq.com/products/scene-builder/).
-    1. There are two FXML files. Switch between the scenes by click on the button on each scene
+    1. There are multiple FXML files. The first scene has a button that will quickly switch to the other scenes.  
 2. Using `GridPane` and identifying the cell that was clicked on. (Many teams use a `GridPane` container to develop some sort of board game like checkers, chess, or a grid-like game such as sudoku.) The user clicks on an object managed using a `GridPane`, and the cell will be identified in the status bar.
-3. A demonstration of animation with Timeline
+3. A demonstration of animation with Timeline.
+4. A basic illustration of MVC with a model to manage lights and light sequences, a view with FXML, and a separate controller. 
+   1. This example shows how to use a `Thread` to illustrate how to ensure any code in your separate thread that triggers an update on your GUI must be placed in your JavaFX Application Thread by using `Platform.runLater()`.  
 
-I expect this to continue to be refined and improved over time. It was thrown together rather quickly. 
+I expect this code to continue to be refined and improved over time. It was thrown together rather quickly. 
 
-![scene_one.png](scene_one.png)  
-![scene_two.png](scene_two.png)
+![main.png](main.png)   
+![gridview.png](gridview.png)  
+![animation.png](animation.png)  
+![lights.png](lights.png)  
 ---
 ### Development Workflow Features
 

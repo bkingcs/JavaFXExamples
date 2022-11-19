@@ -3,7 +3,7 @@ module javafxexamples {
     requires javafx.fxml;
 
     exports com.brk.javafxexamples;
-    opens com.brk.multiscenetest to javafx.fxml;
+    opens com.brk.javafxexamples to javafx.fxml;
     exports com.brk.javafxexamples.animation;
     opens com.brk.javafxexamples.animation to javafx.fxml;
     exports com.brk.javafxexamples.lights;
