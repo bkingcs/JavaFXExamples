@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Slider;
 import javafx.scene.shape.Circle;
 
 /**
@@ -66,6 +67,12 @@ public class LightsDemoController {
     @FXML
     private Circle light3;
 
+    @FXML
+    private Slider sliderDelayBetweenLights;
+
+    @FXML
+    private Slider sliderLightOnTime;
+
     /** The model connected to this FXML view */
     private LightsModel theLightsModel;
 
@@ -106,6 +113,8 @@ public class LightsDemoController {
         assert light1 != null : "fx:id=\"light1\" was not injected: check your FXML file 'lights-demo.fxml'.";
         assert light2 != null : "fx:id=\"light2\" was not injected: check your FXML file 'lights-demo.fxml'.";
         assert light3 != null : "fx:id=\"light3\" was not injected: check your FXML file 'lights-demo.fxml'.";
+        assert sliderDelayBetweenLights != null : "fx:id=\"sliderDelayBetweenLights\" was not injected: check your FXML file 'lights-demo.fxml'.";
+        assert sliderLightOnTime != null : "fx:id=\"sliderLightOnTime\" was not injected: check your FXML file 'lights-demo.fxml'.";
 
         // To make it easier to manage these lights, let's create a list of them that ties
         // together the light and their respective labels
@@ -200,6 +209,11 @@ public class LightsDemoController {
             else if (theLightsModel.getState() == LightModelState.PLAYBACK_SEQUENCE)
                 theLightsModel.stopPlaybackSequence();
         });
+
+        // Update the model from the sliders for the amount of time lights should remain on
+        // and the time between lights
+        this.theLightsModel.lightOnTimeProperty().bind(this.sliderLightOnTime.valueProperty());
+        this.theLightsModel.delayBetweenLightsProperty().bind(this.sliderDelayBetweenLights.valueProperty());
 
         // Change the name of buttons depending on the state
         this.btnRecordSequence.textProperty().bind(

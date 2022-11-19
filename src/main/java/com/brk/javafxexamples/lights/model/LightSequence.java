@@ -75,7 +75,7 @@ public class LightSequence {
         return new Runnable() {
             @Override
             public void run() {
-                currentPlayPosition.setValue(0);
+                Platform.runLater(() -> currentPlayPosition.setValue(0));
 
                 /////////////////////
                 // IMPORTANT - Any property that propagates to change something in the JavaFX GUI

@@ -1,10 +1,7 @@
 
 package com.brk.javafxexamples.lights.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.*;
 
 import java.util.TreeMap;
 
@@ -26,6 +23,16 @@ public class LightsModel {
     /** Current state of the LightsModel */
     private ObjectProperty<LightModelState> state;
 
+    /** Amount of time each light should remain on when playing a sequence */
+    private DoubleProperty lightOnTime;
+
+    /** Among of time to wait between lights when playing a sequence */
+    private DoubleProperty delayBetweenLights;
+
+    /** A reference to the thread playing back the sequence if one is running */
+    private Thread playbackThread;
+
+
     /**
      * General constructor to initialize all light counters to 0
      */
@@ -36,6 +43,9 @@ public class LightsModel {
         }
         this.lightSequence = new LightSequence();
         this.state = new SimpleObjectProperty<>(LightModelState.READY);
+        this.lightOnTime = new SimpleDoubleProperty(0.5);
+        this.delayBetweenLights = new SimpleDoubleProperty(0.5);
+        this.playbackThread = null;
     }
 
     /**
@@ -55,6 +65,30 @@ public class LightsModel {
     /** @return the {@link LightSequence} */
     public LightSequence getLightSequence() {
         return lightSequence;
+    }
+
+    public double getLightOnTime() {
+        return lightOnTime.get();
+    }
+
+    public DoubleProperty lightOnTimeProperty() {
+        return lightOnTime;
+    }
+
+    public void setLightOnTime(double lightOnTime) {
+        this.lightOnTime.set(lightOnTime);
+    }
+
+    public double getDelayBetweenLights() {
+        return delayBetweenLights.get();
+    }
+
+    public DoubleProperty delayBetweenLightsProperty() {
+        return delayBetweenLights;
+    }
+
+    public void setDelayBetweenLights(double delayBetweenLights) {
+        this.delayBetweenLights.set(delayBetweenLights);
     }
 
     /**
@@ -84,11 +118,11 @@ public class LightsModel {
             // Set up a new Runnable returned from sequenceTask. The third parameter is
             // a simple lambda called at the end of the sequence. I could have hard coded it,
             // but that creates an additional dependency between LightModel and LightSequence
-            Thread t = new Thread(lightSequence.sequenceTask(500,
-                                                             500,
+            playbackThread = new Thread(lightSequence.sequenceTask(Math.round(this.getLightOnTime()*1000.0),
+                                                             Math.round(this.getDelayBetweenLights()*1000.0),
                                                              () -> setState(LightModelState.READY)));
-            t.setDaemon(true);
-            t.start();
+            playbackThread.setDaemon(true);
+            playbackThread.start();
         }
     }
 
@@ -97,6 +131,7 @@ public class LightsModel {
      */
     public void stopPlaybackSequence() {
         if (getState() == LightModelState.PLAYBACK_SEQUENCE) {
+            playbackThread.interrupt();
             setState(LightModelState.READY);
         }
     }
