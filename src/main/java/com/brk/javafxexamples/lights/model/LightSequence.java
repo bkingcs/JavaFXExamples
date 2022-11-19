@@ -97,7 +97,7 @@ public class LightSequence {
                     }
                 }
                 catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    // Code reaches here if the user terminates the playback prematurely
                 }
                 finally {
                     Platform.runLater(() -> onFinished.call());
