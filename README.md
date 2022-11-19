@@ -22,7 +22,7 @@ This project contains some simple code to help students understand how to accomp
 2. Using `GridPane` and identifying the cell that was clicked on. (Many teams use a `GridPane` container to develop some sort of board game like checkers, chess, or a grid-like game such as sudoku.) The user clicks on an object managed using a `GridPane`, and the cell will be identified in the status bar.
 3. A demonstration of animation with Timeline.
 4. A basic illustration of MVC with a model to manage lights and light sequences, a view with FXML, and a separate controller. 
-   1. This example shows how to use a `Thread` to illustrate how to ensure any code in your separate thread that triggers an update on your GUI must be placed in your JavaFX Application Thread by using `Platform.runLater()`.  
+   1. This example shows how to use a `Thread`, and more importantly, how to ensure any code in your thread that triggers an update on your GUI must be placed in your JavaFX Application Thread by using `Platform.runLater()`. NEVER have any code that does a lot of processing running in your main JavaFX thread. It must be run in a separate thread.
 
 I expect this code to continue to be refined and improved over time. It was thrown together rather quickly. 
 
